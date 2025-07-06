@@ -1,0 +1,700 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=rule of thirds, golden ratio, hyper-maximalist, vibrant neon, high-contrast, octane render, photorealism, 8k ::7 --ar 16:9 --s 1000\n\nDesign a fun, energetic scene filled with bold, neon colors, and playful shapes that pop off the screen. The image should evoke a sense of joy and movement, using fluid, organic forms and exaggerated, cartoon-like proportions. Focus on creating a lively atmosphere with contrasting, saturated tones and dynamic lighting. Use a mix of asymmetrical and balanced compositions to create a playful visual flow. Render in 8K with a hyper-maximalist approach using Octane Render for vibrant, high-gloss textures and photorealistic lighting effects. Include:"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "99e7b715-5741-4d99-a7a8-f760e67aa01c",
+      "name": "Vivid Pop Explosion",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        740
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=golden ratio, rule of thirds, cyberpunk, glitch art, octane render, cinematic realism, 8k ::7 --ar 16:9 --s 1000\n\nGenerate a futuristic, cyberpunk dystopia with metallic textures, digital glitches, and neon lights. Blend cold, dystopian structures with traces of organic life. Use photorealistic lighting and dynamic reflections to enhance the visual depth of the scene. Include:"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "2ccc7a27-27d0-4f3e-ba86-8b5be0550614",
+      "name": "AI Dystopia",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        380
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=rule of thirds, asymmetric composition, glitch art, pixelation, VHS noise, octane render, unreal engine, 8k ::7 --ar 16:9 --s 1200\nDesign a glitchy, post-analog world with digital decay and broken visuals. Utilize pixelated elements, VHS noise, and neon glitches to create a fragmented aesthetic. Use bold, contrasting colors against muted backgrounds for a high-contrast, otherworldly feel. The composition should follow asymmetrical rules, focusing on chaotic yet intentional visual balance. Include:"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "54d7672f-eaa0-4229-8f67-39ae4f634059",
+      "name": "Post-Analog Glitchscape",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        180
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=asymmetric composition, golden ratio, neon colors, abstract forms, octane render, cinematic realism, unreal engine, 8k ::7 --ar 16:9 --s 1000\nCreate a bold, vivid composition using neon colors and fluid shapes that break away from reality. Focus on abstract forms, blending Fauvism's exaggerated color palette with modern digital art techniques. Use asymmetric composition and dynamic lighting. Render with a vibrant, high-energy aesthetic. Include:"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "c9fa3bcb-0c5e-4b91-a6bb-43f022c427c1",
+      "name": "Neon Fauvism",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        560
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=Include: "
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "6e4c6ce6-118c-4b0e-9151-e5ab401802a7",
+      "name": "None",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        940
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"formSubmittedText\": \"Flux API failed. It does this ~10% of the time. Refresh and try again.\"\n}",
+        "options": {}
+      },
+      "id": "51c9370b-d56e-4736-94ef-58b5792b846d",
+      "name": "Respond with error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        1140,
+        580
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "content": "### Set style prompt\nEach Edit fields node after the Switch sets `stylePrompt`, used in huggingface node.",
+        "height": 107.99633347519193,
+        "width": 205.9419250888625,
+        "color": 7
+      },
+      "id": "2c6bb2ca-e672-4d4b-890f-91f54cc97523",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -340,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Run flux model\nIn `Call huggingface inference api` You can change `black-forest-labs/FLUX.1-schnell` in URL parameter to other models:\n- `black-forest-labs/FLUX.1-dev`\n- `Shakker-Labs/FLUX.1-dev-LoRA-AntiBlur`\n- `XLabs-AI/flux-RealismLora`\n- `ByteDance/Hyper-SD`\n\n[See more models on huggingface.co](https://huggingface.co/models?pipeline_tag=text-to-image&sort=trending)\n",
+        "height": 226.2264013670822,
+        "width": 419.0156901664085,
+        "color": 7
+      },
+      "id": "cd87f0b1-4aa8-4a74-a21a-b47a42ff3930",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        400,
+        600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Host image on S3\n[Cloudflare](https://cloudflare.com) has free S3 compatible hosting. They call it \"R2\".",
+        "height": 90.99855957953969,
+        "width": 247.37323750873333,
+        "color": 7
+      },
+      "id": "b3553e81-255e-4dac-a6c3-f2b408c74221",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        800,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Respond to Form\nServe a webform with image on success. On error, send message to form.",
+        "height": 90.99855957953969,
+        "width": 302.9292231993488,
+        "color": 7
+      },
+      "id": "c4baf7c7-22fc-4b86-86b9-fc6a8f797d30",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1140,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9ec60f33-b940-40a6-9f8a-cb944b7065f1",
+              "name": "stylePrompt",
+              "type": "string",
+              "value": "=golden ratio, rule of thirds, cyberpunk, glitch art, octane render, cinematic realism, 8k ::7 --ar 16:9 --s 1000\nCreate a hyper-realistic yet surreal landscape that bends reality, incorporating dreamlike elements and exaggerated proportions. Use vibrant, almost neon colors, and focus on a sense of wonder, play, and fantasy. Include:\n"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "e08907b1-a7b6-4c15-a7cf-aed95d439a0a",
+      "name": "Hyper-Surreal Escape",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        60,
+        0
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.4,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "content": "### Serve form to user\nCaptures `Prompt to flux` and `Style` from user.",
+        "height": 103.99685726445023,
+        "width": 186.9444130878394,
+        "color": 7
+      },
+      "id": "c6aa37d2-61eb-4652-927a-faf9600c5031",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -640,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "path": "flux4free",
+        "formTitle": "flux.schnell image generator",
+        "formDescription": "No ads, no BS. Uses hugginface inference API.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Prompt to flux",
+              "fieldType": "textarea",
+              "placeholder": " An astronaut riding a horse in 35mm style",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Style",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Hyper-Surreal Escape"
+                  },
+                  {
+                    "option": "Neon Fauvism"
+                  },
+                  {
+                    "option": "Post-Analog Glitchscape"
+                  },
+                  {
+                    "option": "AI Dystopia"
+                  },
+                  {
+                    "option": "Vivid Pop Explosion"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1e1e3165-73d3-48aa-9a58-35fedff3f617",
+      "name": "n8n Form Trigger",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        -600,
+        420
+      ],
+      "webhookId": "a35eb005-f795-4c85-9d00-0fe9797cb509",
+      "typeVersion": 2.1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://8001-01jzfky460hfbxyemx4vfxyzap.cloudspaces.litng.ai/predict",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer pk"
+            },
+            {
+              "name": "Accept",
+              "value": "image/png"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer pk"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "=cat"
+            },
+            {
+              "name": "stylePrompt",
+              "value": "asymmetric composition, golden ratio, neon colors, abstract forms, octane render, cinematic realism, unreal engine, 8k ::7 --ar 16:9 --s 1000\\nCreate a bold, vivid composition using neon colors and fluid shapes that break away from reality. Focus on abstract forms, blending Fauvism's exaggerated color palette with modern digital art techniques. Use asymmetric composition and dynamic lighting. Render with a vibrant, high-energy aesthetic. Include:"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cb504845-9975-473a-a26f-b2ccd7541566",
+      "name": "Call hugginface inference api",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        460,
+        420
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.2,
+      "onError": "continueErrorOutput",
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "content": "### Watch Set Up Video 👇\n[![Flux Generator](https://uploads.n8n.io/devrel/fluxgenerator.png#full-width)](https://youtu.be/Rv_1jt5WvtY)\n\n",
+        "height": 337.24177957113216,
+        "width": 506.8102696237577,
+        "color": 7
+      },
+      "id": "494ffe7f-5063-49ad-96ef-24367d52d466",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1200,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# flux image generator\nBuilt by [@maxtkacz](https://x.com/maxtkacz) as part of the [30 Day AI Sprint](https://30dayaisprint.notion.site/)\nCheck out the project's [Notion page](https://30dayaisprint.notion.site/Flux-image-generator-bc94a8d2de8447c6ab70aacf2c4179f2) for more details",
+        "height": 134.27496896630808,
+        "width": 506.8102696237577,
+        "color": 7
+      },
+      "id": "7f760d59-e3af-4b5a-a7f0-e104d0521512",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1200,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.Style }}",
+                    "rightValue": "Hyper-Surreal Escape"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Hyper-Surreal Escape"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "106969fa-994c-4b1e-b693-fc0b48ce5f3d",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.Style }}",
+                    "rightValue": "Post-Analog Glitchscape"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Post-Analog Glitchscape"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "24318e7d-4dc1-4369-b045-bb7d0a484def",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.Style }}",
+                    "rightValue": "AI Dystopia"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "AI Dystopia"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "a80911ff-67fc-416d-b135-0401c336d6d8",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.Style }}",
+                    "rightValue": "Neon Fauvism"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Neon Fauvism"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "7fdeec28-194e-415e-8da2-8bac90e4c011",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.Style }}",
+                    "rightValue": "Vivid Pop Explosion"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Vivid Pop Explosion"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "9b59cdb9-1008-46fd-afcc-e5833854f05e",
+      "name": "Route by style",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        -320,
+        400
+      ],
+      "typeVersion": 3.1
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "image_base64",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        640,
+        320
+      ],
+      "id": "a5a96dd0-92df-4d6e-b1f4-4632f45b49d0",
+      "name": "Convert to File"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "None": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Dystopia": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Neon Fauvism": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by style": {
+      "main": [
+        [
+          {
+            "node": "Hyper-Surreal Escape",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Post-Analog Glitchscape",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Dystopia",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Neon Fauvism",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Vivid Pop Explosion",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "None",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n Form Trigger": {
+      "main": [
+        [
+          {
+            "node": "Route by style",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vivid Pop Explosion": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hyper-Surreal Escape": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post-Analog Glitchscape": {
+      "main": [
+        [
+          {
+            "node": "Call hugginface inference api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call hugginface inference api": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond with error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9af7ccfe-6f05-46fa-b31b-f0f02c4750e4",
+  "meta": {
+    "instanceId": "271e5bc74c1d77d04a00ff2e65c759937594e21e453359a5bb8871f6882aa921"
+  },
+  "id": "MS26EmEVthoEpGSh",
+  "tags": [
+    {
+      "createdAt": "2025-07-06T16:45:47.345Z",
+      "updatedAt": "2025-07-06T16:45:47.345Z",
+      "id": "9AIRhvI28QRBASZk",
+      "name": "lightning ai"
+    }
+  ]
+}
